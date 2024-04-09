@@ -1,7 +1,5 @@
 "use client";
 
-// This is a test
-
 import Header from "../components/Header/Header"
 import React, { useEffect } from "react"
 import { useState } from "react"
