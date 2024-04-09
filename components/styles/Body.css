@@ -1,0 +1,32 @@
+
+
+
+
+.Body {
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 1500px) {
+    .Body {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .Body {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .Body {
+        grid-template-columns: auto;
+    }
+}

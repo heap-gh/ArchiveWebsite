@@ -1,0 +1,15 @@
+
+.userelement {
+    display: flex;
+    justify-content: center;
+
+}
+
+.user-username,
+.user-name {
+    color: rgba(101, 253, 243, 0.836);
+    font-family: Roboto;
+    margin: 0;
+    margin-top: 5px;
+
+}

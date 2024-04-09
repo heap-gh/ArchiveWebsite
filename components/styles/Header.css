@@ -1,0 +1,20 @@
+
+.Header {
+   display: flex;
+   height: 100px;
+   width: 100%;
+   border: none;
+   background-color: rgb(31, 40, 51);
+   box-shadow: 0 4px 4px rgb(102, 252, 241, 0.5);
+   justify-content: space-between;
+   align-items: center; 
+   -moz-box-shadow: 0 4px 4px rgba(102, 252, 241, 0.5);
+   -webkit-box-shadow: 0 4px 4px rgba(102, 252, 241, 0.5);
+   overflow: hidden;
+   position: fixed;
+   top: 0;
+}
+
+.gay {
+    color:white;
+}

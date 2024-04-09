@@ -1,0 +1,26 @@
+
+.profilebar-container {
+
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+    padding-left: 100px;
+}
+
+@media(max-width: 700px){
+    
+    
+    .profilebar-container {
+        padding-left: 0px;
+    }
+}
+
+.archive-text {
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+   
+}

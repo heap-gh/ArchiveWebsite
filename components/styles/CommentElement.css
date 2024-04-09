@@ -1,0 +1,42 @@
+
+.commentelement {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+
+}
+
+
+.comment-name {
+
+    color: rgba(236, 236, 236, 0.836);
+    font-family: Roboto;
+    margin: 0;
+    margin-top: 5px;
+    
+}
+
+.comment-body {
+
+    color: rgba(101, 253, 243, 0.836);
+    font-family: Roboto;
+    margin: 0;
+    margin-top: 25px;
+
+}
+
+.comment-email {
+
+    color: rgb(255, 255, 255);
+    font-family: Roboto;
+    margin: 0;
+    margin-top: 5px;
+    padding-top: 15px;
+    
+}

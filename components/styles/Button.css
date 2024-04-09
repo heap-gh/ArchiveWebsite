@@ -1,0 +1,21 @@
+
+/* HERE ARE ALL BUTTON STYLES FOR THE APPLICATION*/
+
+
+.search-enter-button {
+
+    margin-left: -2px;
+    height: 31px;
+    width: 40px;
+    background-color: transparent;
+    border-radius: 0px 15px 15px 0px;
+    border: 2px solid #66fcf1;
+    box-shadow: 0px 0px 10px rgba(102, 252, 241, 0.8);
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.search-enter-button:active {
+    background-color: rgba(197, 198, 199, 0.227);
+
+}
