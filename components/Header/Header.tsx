@@ -9,8 +9,7 @@ import MenuBar from './MenuBar'
 interface headerProps {
 
     setSearchString: React.Dispatch<React.SetStateAction<string>>,
-    handleSubmit: 
-        (keyBoardEvent?: React.KeyboardEvent<HTMLInputElement>) => void,
+    handleSubmit: (keyBoardEvent?: React.KeyboardEvent<HTMLInputElement>) => void,
 }
 
 

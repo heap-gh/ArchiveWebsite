@@ -1,32 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./SideBar.css"
-
-const isRadioSelected = (radioValue: string): boolean => {
-
-    return false;
-}
-
-const handleRadioClick = () => {
-
-
-}
+import { sideBarCheckboxProps } from "@/components/SideBar/SideBarCheckbox"
+import SideBarCheckbox from '@/components/SideBar/SideBarCheckbox'
 
 
 interface sideBarProps {
 
-
+    userCheckboxProps: sideBarCheckboxProps,
+    postsCheckboxProps: sideBarCheckboxProps,
+    commentsCheckboxProps: sideBarCheckboxProps,
 }
 
-const SideBar: React.FC<sideBarProps> = ( { } ) => {
+
+
+const SideBar: React.FC<sideBarProps> = ( { 
+    userCheckboxProps,
+    postsCheckboxProps,
+    commentsCheckboxProps,
+
+} ) => {
+
+
   return (
     <div id={"sidebar"} className="sidebar">
-        <input 
-            type="radio"
-            name="comments-radio"
-            value="com_rad"
-            checked={isRadioSelected("com_rad")}
-            onChange={handleRadioClick}
+        
+        <SideBarCheckbox 
+        className="sidebar-checkbox"
+        id="searchUsersCheckbox"
+        setValue={userCheckboxProps.setValue}
+        value={userCheckboxProps.value}
+        name="Users"
         />
+
+        <SideBarCheckbox 
+        className="sidebar-checkbox"
+        id="searchPostsCheckbox"
+        setValue={postsCheckboxProps.setValue}
+        value={postsCheckboxProps.value}
+        name="Posts"
+        />
+
+        <SideBarCheckbox 
+        className="sidebar-checkbox"
+        id="searchCommentsCheckbox"
+        setValue={commentsCheckboxProps.setValue}
+        value={commentsCheckboxProps.value}
+        name="Comments"
+        />
+
     </div>
   )
 }

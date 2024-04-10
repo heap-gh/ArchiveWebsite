@@ -8,5 +8,7 @@
     top: 100px;
     box-shadow: 5px 0 3px -2px rgba(102, 252, 241, 0.5);
     left: -210px;
-    transition: left 0.1s ease-in-out;
+    transition: left 0.2s ease-in-out;
 }
+
+

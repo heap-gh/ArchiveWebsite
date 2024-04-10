@@ -40,7 +40,7 @@ const MenuBar = () => {
         children=""  
         buttonImage={hamburgerButtonImage.src}
         buttonImageClass='menubar-button-image'
-        onClick={() => {handleClick(buttonState); buttonState *= -1}}
+        onClick={() => { handleClick(buttonState); buttonState *= -1} }
         imageId="hamburgerButton"
        />
        <p className='menubar-description'>MENU</p>
@@ -49,3 +49,5 @@ const MenuBar = () => {
 }
 
 export default MenuBar
+
+

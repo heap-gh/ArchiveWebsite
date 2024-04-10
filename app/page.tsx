@@ -9,9 +9,12 @@ import apiRequest from "@/components/ApiRequst";
 import { Body } from "@/components/Body";
 import { similarity } from "@/helper/helper";
 import SideBar from "@/components/SideBar/SideBar";
+import { sideBarCheckboxProps } from "@/components/SideBar/SideBarCheckbox"
+
 
 export default function Home() {
 
+    // The API
     const API_URL = "https://jsonplaceholder.typicode.com/"
     
     // The string entered in the search bar
@@ -28,6 +31,12 @@ export default function Home() {
     const [postsData, setPostsData] = useState<posts[]>([]);
     const [commentsData, setCommentsData] = useState<comments[]>([]);
 
+    // Checkboxes in Sidebar
+    const [searchUsers, setSearchUsers] = useState<boolean>(true);
+    const [searchPosts, setSearchPosts] = useState<boolean>(true);
+    const [searchComments, setSearchComments] = useState<boolean>(true);
+    
+
     /*
         This functions handle a submit request, which is emitted when "ENTER" is pressed when the Searchbar is focussed
         or the Button next to the Searchbar is pressed
@@ -39,34 +48,39 @@ export default function Home() {
 
     */
 
+
     const handleSubmit = (keyBoardEvent?: React.KeyboardEvent<HTMLInputElement>) => {
 
             if (searchString !== "" && searchString !== " "){
                 
+                // If "Enter" is pressed or SearchButton is clicked (undefined)
                 if (keyBoardEvent?.key == "Enter" || keyBoardEvent === undefined){
                     
                     let matchingData: (users | comments | posts)[] = [];
                     
-
-                    for (const key in usersData){
-                        if(similarity(usersData[key].name, searchString) > 0.4){
-                            matchingData.push(usersData[key])
+                    if (searchUsers){
+                        for (const key in usersData){
+                            if(similarity(usersData[key].name, searchString) > 0.4){
+                                matchingData.push(usersData[key])
+                            }
                         }
                     }
-
-                    for (const key in commentsData) {
-                        if(commentsData[key].body.includes(searchString)
-                            || commentsData[key].name.includes(searchString)){
-                            matchingData.push(commentsData[key])
+                    
+                    if (searchComments){
+                        for (const key in commentsData) {
+                            if(commentsData[key].body.includes(searchString)
+                                || commentsData[key].name.includes(searchString)){
+                                matchingData.push(commentsData[key])
+                            }
                         }
-                        
                     }
-
-
-                    for (const key in postsData) {
-                        if(postsData[key].body.includes(searchString)
-                            || similarity(postsData[key].title, searchString) > 0.3){
-                                matchingData.push(postsData[key])
+                    
+                    if (searchPosts){
+                        for (const key in postsData) {
+                            if(postsData[key].body.includes(searchString)
+                                || similarity(postsData[key].title, searchString) > 0.3){
+                                    matchingData.push(postsData[key])
+                            }
                         }
                     }
 
@@ -182,13 +196,21 @@ export default function Home() {
 
     }, [])
 
+    console.log(searchComments)
+    console.log(searchUsers)
+    console.log(searchPosts)
+
   return (
     <main>
         <Header 
             setSearchString={setSearchString} 
             handleSubmit={handleSubmit}
         />
-        <SideBar></SideBar>
+        <SideBar 
+            userCheckboxProps={{setValue: setSearchUsers, value:searchUsers}}
+            postsCheckboxProps={{setValue: setSearchPosts, value: searchPosts}}
+            commentsCheckboxProps={{setValue: setSearchComments, value:searchComments}}
+        />
         <Body data={searchData}>
 
         </Body>
